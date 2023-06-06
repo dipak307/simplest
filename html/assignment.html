@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     #green{
+       color: green;
+     }
+     #yellow{
+        color:yellow;
+     }
+    </style>
+</head>
+<body>
+     <form action="">
+        <label for="">Fname</label>
+        <input type="text" id="name">
+        <label for="">Lname</label>
+        <input type="text" id="last">
+        <button id="submit">Submit</button>
+     </form>
+     <script>
+        let btn=document.getElementById('submit');
+        btn.addEventListener('mouseout',(e)=>{
+            e.preventDefault();
+            document.getElementById('name').style.background="red";
+        })
+        btn.addEventListener('mouseover',(e)=>{
+        e.preventDefault();
+        document.getElementById('last').style.background="green";
+        })
+        btn.addEventListener('click',(e)=>{
+        e.preventDefault();
+        document.getElementById('name').style.background="pink";
+        document.getElementById('last').style.background="pink";
+      }) 
+        
+     </script>
+</body>
+</html>

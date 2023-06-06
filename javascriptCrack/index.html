@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!-- <div class="container">
+        <div class="child">Hello I am child one</div>
+        <div class="kk">Hello I am child second</div>
+        <div id="child">Hello I am child Third</div>
+        <button onclick="changeContent()">Click Here</button>
+    </div> -->
+
+
+
+    <!-- <div class="container">
+        <label for="">Your Name : </label>
+        <input type="text" name="" id="ice"><br>
+        <label for="">Choose Your IceCream Flavour</label><br>
+    <select name="iceCream" id="iceCream" onchange="changing()">         
+        <option value="">Select Option Below</option>
+        <option value="chocolate">Chocolate</option>
+        <option value="vanilla">Vanilla</option>
+        <option value="sardine">Sardine</option>
+     </select>
+        <div id="output"> Here Is Your new order</div>
+    </div> -->
+
+
+
+<div class="container">
+    <div>
+        <p>Want to know My Name</p>
+        <p id="showMyName"></p>
+        <br>
+        <button id="btn">Click Here</button>
+        <button id="btn2">Stop It</button>
+    </div>
+</div>
+
+
+    <script>
+
+    //////////  Set Interval and clearInterval //////////////////////
+
+        //     const showMyName=document.querySelector('#showMyName');
+        //     const btn=document.getElementById('btn');
+        //     let set;
+        //     let num=0;
+        //   const showMyName1=()=>{
+        //     showMyName.innerHTML="Loading...";
+        //      set=setInterval(()=>{
+        //         showMyName.innerHTML=`${num}`;
+        //         num++;
+        //     },1000)
+        //   }
+        //     btn.addEventListener('click',showMyName1);
+        //     const btn2=document.getElementById('btn2');
+        //     btn2.addEventListener('click',()=>{
+        //         clearInterval(set);
+        //     });
+
+   /////////////Set Time Out and clear Time out///////
+
+        //     const showMyName=document.querySelector('#showMyName');
+        //     const btn=document.getElementById('btn');
+        //     let set;
+        //   const showMyName1=()=>{
+        //     showMyName.innerHTML="Loading...";
+        //      set=setTimeout(()=>{
+        //         showMyName.innerHTML="Dipak Zende"
+        //     },2000)
+        //   }
+            
+        //     btn.addEventListener('click',showMyName1);
+
+        //     const btn2=document.getElementById('btn2');
+        //     btn2.addEventListener('click',()=>{
+        //         clearTimeout(set);
+        //     });
+
+
+            // const changing=()=>{
+            //     const inputChan=document.getElementById('ice').value;
+            //     const IceCream=document.getElementById('iceCream').value;
+            //     // console.log(`${inputChan} and ${IceCream}`);
+            //      document.getElementById('output').innerHTML=`Dipak you have a new order from ${inputChan} and he ordered ${IceCream}`;
+            // }
+
+        //    const changeContent=()=>{
+        //        document.querySelector("#child").innerHTML='I am not CHILD 3 ,LEING';
+        //        document.querySelector('.child').innerHTML=" hey its me";
+        //        document.querySelector('.kk').innerHTML="I am kkkk"
+        //    }
+
+
+        // document.body.style.background='red';
+        // document.body.firstElementChild.firstElementChild.style.color='green';
+        // const first=document.querySelector('.child1');
+        // first.style.background='blue';
+        // first.style.color='yellow';
+
+// there is four Way we can create event function
+//// 1 Way
+    //    const changeContent=()=>{
+    //     document.getElementById('child').style.color='blue';
+    //    }
+
+
+/////2 Way
+
+// const changeCon=document.getElementById('child');
+// changeCon.onclick=function(){
+//     changeCon.innerHTML="DIPAK";
+// }
+
+//// 3 way
+//   const fourthWay=document.querySelector('.kk');
+//   fourthWay.addEventListener('click',()=>{
+//       fourthWay.innerHTML="mazi satakali";
+//     })
+
+
+//     const clikableEvent=()=>{
+//       // console.log(event);
+//       // console.log(event.target);
+//       console.log(event.type);
+//     }
+//   fourthWay.addEventListener('click',clikableEvent)
+
+//////// Event in js like mouceEvent,keyboardEvent,
+// const seconde=document.querySelector('.kk');
+//  seconde.addEventListener('mouseenter',()=>{
+//    seconde.style.background='red';
+//  })
+
+
+
+    </script>
+</body>
+</html>
