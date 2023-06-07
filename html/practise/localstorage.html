@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="Uname">Name</label>
+        <input type="text" id="dip">
+        <label for="Email">Email</label>
+        <input type="text" id="mail">
+        <button id="submit">Submit</button>
+    </form>
+
+    <script>
+        const sub=document.getElementById("submit");
+        sub.addEventListener('click',(e)=>{  
+            const name=document.getElementById('dip');
+               const val=name.value;
+               const email=document.getElementById('mail');
+              const mail=email.value;
+            e.preventDefault();
+          localStorage.setItem("name",val);
+        //   console.log(val);
+          localStorage.setItem("Email",mail);
+        //   console.log(mail);
+        })
+        
+    </script>
+</body>
+</html>
