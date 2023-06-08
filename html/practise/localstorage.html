@@ -13,15 +13,25 @@
         <label for="Email">Email</label>
         <input type="text" id="mail">
         <button id="submit">Submit</button>
+        <div class="contain">
+
+        </div>
+        <div class="con">
+
+        </div>
     </form>
 
     <script>
         const sub=document.getElementById("submit");
         sub.addEventListener('click',(e)=>{  
+          const Dwrite=document.querySelector('.contain');
+          const Dwr=document.querySelector('.con');
             const name=document.getElementById('dip');
                const val=name.value;
                const email=document.getElementById('mail');
               const mail=email.value;
+              Dwrite.innerHTML=val;
+              Dwr.innerHTML=mail;
             e.preventDefault();
           localStorage.setItem("name",val);
         //   console.log(val);
