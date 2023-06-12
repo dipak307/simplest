@@ -55,7 +55,7 @@
     <button id="btn"> Add Expense </button>
 
     <div class="div9">
-         
+         <span>This is div 9</span>
     </div>
     
 <script>
@@ -84,6 +84,11 @@
         div4.innerHTML=first;
         div5.innerHTML=sec;
         div6.innerHTML=third; 
+
+        const temp=document.createElement('div');
+        temp.classList.add("div8");
+
+        div9.appendChild(temp);
         
 const deleted=document.createElement('button');
     deleted.classList.add('del');
@@ -92,13 +97,11 @@ const deleted=document.createElement('button');
     Edit.classList.add('edit');
     Edit.innerHTML="Edit";
 
-    // deleted.className.add('Delete');
-
-    div9.insertAdjacentElement("afterbegin",Edit);
-    div9.insertAdjacentElement("afterbegin",deleted);
-    div9.insertAdjacentElement("afterbegin",div6);
-    div9.insertAdjacentElement("afterbegin",div5); 
-    div9.insertAdjacentElement("afterbegin",div4);
+    temp.insertAdjacentElement("afterbegin",deleted);
+    temp.insertAdjacentElement("afterbegin",Edit);
+    temp.insertAdjacentElement("afterbegin",div6);
+    temp.insertAdjacentElement("afterbegin",div5); 
+    temp.insertAdjacentElement("afterbegin",div4);
     
 deleted.addEventListener('click',(event)=>{
 const item=event.target;
@@ -110,14 +113,65 @@ if (item.classList.contains('del')) {
 
 
 Edit.addEventListener('click',(event1)=>{
-        let forEdit = event1.parentElement;
-        let input = document.createElement('input');
-        input.type = 'text';
-        input.value = "";
-        forEdit.replaceWith(input);
-        Edit.textContent = 'save';
-    })
+    const item=event1.target;
+    if(item.textContent==='Edit'){
+        let forEdit = temp.firstElementChild;
+        let forEdit2=temp.firstElementChild.nextSibling;
+        let forEdit3=temp.firstElementChild.nextSibling.nextSibling;
 
+        let input = document.createElement('input');
+        input.type = 'number';
+        input.value=forEdit.textContent;
+
+        let input2 = document.createElement('input');
+        input.type = 'text';
+        input.value=forEdit2.textContent;
+
+        let input3=document.createElement("input");
+        input.type='text';
+        input.value=forEdit2.textContent;
+
+        
+        temp.insertBefore(input,forEdit);
+        temp.removeChild(forEdit);
+        
+        temp.insertBefore(input2,forEdit2);
+        temp.removeChild(forEdit2);
+        
+        temp.insertBefore(input3,forEdit3);
+        temp.removeChild(forEdit3);
+        item.textContent='Save';
+    }else if(item.textContent==='Save'){
+        const input=temp.firstElementChild;
+
+        const input2=temp.firstElementChild.nextSibling;
+
+        const input3=temp.firstElementChild.nextSibling.nextSibling;
+
+
+        const div=document.createElement('div');
+        div.textContent=input.value;
+
+        const div2=document.createElement('div');
+        div2.textContent=input2.value;
+
+        const div3=document.createElement('div');
+        div3.textContent=input3.value;
+
+        
+
+        temp.insertBefore(div,input);
+        temp.removeChild(input);
+
+        temp.insertBefore(div2,input2)
+        temp.removeChild(input2);
+
+        temp.insertBefore(div3,input3);
+        temp.removeChild(input3);
+
+        item.textContent='Edit';
+    } 
+    })
     })
       
     
