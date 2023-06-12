@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 id="h"> This is my first practise</h1>
+    <button onclick="turn()">click here</button>
+    <button onclick="firstChange()">changeFirst</button>
+    <button onclick="secondChange()">secondChange</button>
+     <img src="" alt="naturePics" id="myimg">
+    <script>
+        function turn(){
+            const changing=document.getElementById('h');
+            changing.innerHTML="ya its changed";
+        }
+      const firstChange=()=>{
+         const img1=document.getElementById('myimg');
+         img1.src="images.jpg";
+      }
+
+      const secondChange=()=>{
+        const img2=document.getElementById('myimg');
+        img2.src='imges2.jpg';
+      }
+    </script> -->
+    
+
+<!-- adding html using javascript -->
+
+<button id="btn">YOU WANT TO ADD</button>
+
+<script>
+  const addbtn=document.querySelector('#btn');
+
+const addnewHtml=()=>{
+  const note=document.createElement('div')
+  note.classList.add('note');
+  ///we can add html using blackslash
+  const htmlData=`<div class="operation">
+                <button class="edit"> <h1> he click me </h1> </button>
+                <button class="delete"> <h2> hey don't click me</h2> </button>
+                 </div>
+                 <textarea class="text1"> </textarea>
+                 `
+          note.insertAdjacentHTML('afterbegin',htmlData);
+          // console.log(note);
+          document.body.appendChild(note);//  done here adding content
+///////deleting the content
+          const deletedbtn=document.querySelector('.delete');
+        deletedbtn.addEventListener('click',()=>{
+          note.remove();
+        })
+
+
+
+}
+
+     addbtn.addEventListener("click",()=>{
+      addnewHtml()
+     })
+</script>
+
+</body>
+</html>

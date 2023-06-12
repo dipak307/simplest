@@ -7,25 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    <form action="" id="form">
         <label for="Uname">Name</label>
         <input type="text" id="dip">
         <label for="Email">Email</label>
         <input type="text" id="mail">
         <button id="submit">Submit</button>
-        <div class="contain">
-
-        </div>
-        <div class="con">
-
-        </div>
+           <div class="contain">
+          </div> 
+             <div class="con"> </div>
     </form>
 
     <script>
         const sub=document.getElementById("submit");
+        const form=document.getElementById('form');
         sub.addEventListener('click',(e)=>{  
           const Dwrite=document.querySelector('.contain');
           const Dwr=document.querySelector('.con');
+          const btn=document.createElement("button");
+          btn.className="delete";
+          btn.appendChild(document.createTextNode("X"));
+              Dwrite.appendChild(btn);
+              Dwr.appendChild(btn);
+            form.appendChild(Dwrite);
+            form.appendChild(Dwr);
+
             const name=document.getElementById('dip');
                const val=name.value;
                const email=document.getElementById('mail');

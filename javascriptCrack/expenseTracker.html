@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<style>
+    .div{
+        width: 1cm;
+        display: inline;
+    }
+</style>
+</head>
+<body>
+    <!-- <label for="Email">Email</label>
+    <input type="text" id="mail">
+    <button id="submit">Submit</button>
+    <div class="contain">
+
+    </div>
+    <div class="con">
+
+    </div>
+</form>
+
+<script>
+    const sub=document.getElementById("submit");
+    sub.addEventListener('click',(e)=>{  
+        e.preventDefault();
+        const mail=document.getElementById('mail').value;
+     const contain=document.querySelector('.contain');
+     
+     contain.innerHTML=mail;
+    })
+</script> -->
+    <div class="div">
+        <label for="">Choose Expense Amount</label>
+        <input type="number" class="amount" >
+    </div>
+    <div class="div">
+        <label for=""> Choose Description </label>
+        <input type="text" class="desc">
+    </div>
+    <div class="div">
+        <label for="">Choose Category</label>
+         <select name="" id="select">
+            <option value="fuel">Fuel</option>
+            <option value="movies">Movies</option>
+            <option value="hotel">Hotel</option>
+            <option value="trip">Trip</option>
+            <option value="travel">Traveling</option>
+         </select>
+    </div>
+    <button id="btn"> Add Expense </button>
+
+    <div class="div9">
+         
+    </div>
+    
+<script>
+    const btn=document.getElementById('btn');
+    btn.addEventListener('click',(e)=>{    
+         e.preventDefault();
+        const first=document.querySelector('.amount').value;
+        const sec=document.querySelector('.desc').value;
+        const third=document.getElementById('select').value;
+        // const div4=document.querySelector('.div4');
+        // const div5=document.querySelector('.div5');
+        // const div6=document.querySelector('.div6');
+        // div4.innerHTML=first;
+        // div5.innerHTML=sec;
+        // div6.innerHTML=third;       
+        // console.log(div4);
+
+    const div9=document.querySelector('.div9');
+
+        const div4=document.createElement('div');
+        div4.classList.add('div4');
+        const div5=document.createElement('div');
+        div5.classList.add('div5');
+        const div6=document.createElement('div')
+        div6.classList.add("div6")
+        div4.innerHTML=first;
+        div5.innerHTML=sec;
+        div6.innerHTML=third; 
+        
+const deleted=document.createElement('button');
+    deleted.classList.add('del');
+    deleted.innerHTML="Delete"
+    const Edit=document.createElement('button');
+    Edit.classList.add('edit');
+    Edit.innerHTML="Edit";
+
+    // deleted.className.add('Delete');
+
+    div9.insertAdjacentElement("afterbegin",Edit);
+    div9.insertAdjacentElement("afterbegin",deleted);
+    div9.insertAdjacentElement("afterbegin",div6);
+    div9.insertAdjacentElement("afterbegin",div5); 
+    div9.insertAdjacentElement("afterbegin",div4);
+    
+deleted.addEventListener('click',(event)=>{
+const item=event.target;
+const element=item.parentElement;
+if (item.classList.contains('del')) {
+    element.remove();
+  }
+})
+
+
+Edit.addEventListener('click',(event1)=>{
+        let forEdit = event1.parentElement;
+        let input = document.createElement('input');
+        input.type = 'text';
+        input.value = "";
+        forEdit.replaceWith(input);
+        Edit.textContent = 'save';
+    })
+
+    })
+      
+    
+</script>
+
+</body>
+</html>

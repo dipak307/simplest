@@ -193,6 +193,104 @@
 // }
 // fun1();
 
+////////Advance Javascript
+
+
+// JSON
+////JavaScript Object Notation (JSON) is a standard text-based format for 
+//representing structured data based on JavaScript object syntax
+
+// JSON.stringify()
+/// is used to convert object to string
+
+// JSON.parse
+// is used to convert string to object
+
+
+//// Promises
+// promise having two properties resolve and reject
+/// promise is working asynchroniously
+
+// let p=new Promise((resolve,reject)=>{
+//         console.log("Promise is Pending...");
+//         setTimeout(()=>{
+//                 console.log("I am promise I am fullFilled");
+//                 resolve(29);
+//                 // reject(new error("I am reject"));
+//         },6000);
+// })
+
+// p.then((value)=>{
+//         console.log(value);
+// })
+// // console.log(p);
+// // how we can catch error
+// p.catch((error)=>{
+//    console.log("some error occured in p");
+// })
+
+/// we can solving the callback problem using promise chaining
+// let p=new Promise((resolve,reject)=>{
+//      console.log("I am promise and I am fullfilled..");
+//      setTimeout(()=>{
+//         console.log("Hi i am run after 2 second");
+//         resolve(45);
+//      },2000);
+// }).then((value)=>{
+//         console.log(value);
+//    let p1=new Promise((resolve,reject)=>{
+//         console.log("I am p2");
+//         resolve(48);
+//    },3000);
+//    return p1;
+// }).then((value)=>{
+//         console.log(value);
+// })
+
+
+/// Async and Await
+// async function always return promises
+
+// async function dip(){
+//    console.log("its async function returning promise")
+//    let p=new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+// console.log("its done...");
+//         },3000);
+//        console.log("its returning promise");
+//        resolve(84);
+//    }).then((value)=>{
+//         console.log(value);
+//    })
+//    let ans=await p;
+//    return [ans]
+// }
+// let c=dip();
+// console.log(c);
+
+//// only call the function  this -->()<-- code will run
+// const cherry=()=>{
+//         console.log("hi i am cherry..");
+// }
+// let k=cherry();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
