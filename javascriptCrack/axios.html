@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">name</label>
+        <input type="text" id="input">
+        <button id="click"> Click Me</button>
+        <div id="div1">
+
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const  click1=document.getElementById('click');
+           click1.addEventListener('click',(event)=>{
+                  event.preventDefault();
+                  const div=document.getElementById('div1');
+                div.innerHTML=document.getElementById('input').value;
+
+                const obj={
+                    name
+                }
+
+                axios.post("https://crudcrud.com/api/fe620d71f15a4027a7b2e86448faacb2",obj)
+                .then((res)=>{
+                    console.log(res);
+                })
+                .catch((err)=>{
+                    console.log(err);
+                })
+           })
+        
+    </script>
+</body>
+</html>

@@ -607,3 +607,15 @@
 //     }
 //    }
 // fizzBuzz(6);
+
+// async function fun(){
+//   let k=setTimeout(()=>{
+//         console.log("its me dipak");
+//     },2000);
+//     let m=await k;
+//     let y= "hi";
+//     console.log(y);
+// }
+
+// fun();
+// console.log("dipak zende");
