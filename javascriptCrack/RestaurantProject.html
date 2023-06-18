@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Restaurant</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      *{  
+        font-family: 'Roboto', sans-serif;
+      }
+        h1{
+            text-align: center;
+            background-color: red;
+            color: green;
+        }
+form{
+     text-align: center;
+     background-color: pink;
+     height: 550px;
+}
+    </style>
+</head>
+<body>
+
+     <h1>Welcome to Bhojanalaya</h1>
+    <form action="" >
+    <label for="">Choose Price :</label>
+    <input type="number" id="input1">
+    <label for="">Choose Dish :</label>
+    <input type="text" id="input2">
+    <label for="">Choose a Table</label>
+         <select name="" id="select">
+            <option value="Table 1">Table 1</option>
+            <option value="Table 2">Table 2</option>
+            <option value="Table 3">Table 3</option>       
+         </select>
+    <button id="bill">Add to Bill</button>
+
+    <div>
+        <h2>Orders</h2>
+    </div>
+    <div >
+            <h3 id="div1">Table 1</h3>
+    </div>
+    <div>
+        <h3 id="div2">Table 2</h3>
+    </div>
+    <div>
+        <h3 id="div3">Table 3</h3>
+    </div>
+    </form>
+
+
+<script>
+     const btn=document.getElementById('bill');
+    btn.addEventListener('click',(e)=>{    
+         e.preventDefault();
+        const first=document.getElementById('input1').value;
+        const sec=document.querySelector('#input2').value;
+        const third=document.getElementById('select').value;
+        if(third==="Table 1"){
+            let options = {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    expenseAmount:first,
+                    description: sec,
+                    category:third
+                })
+            }
+            let p = fetch("https://crudcrud.com/api/8ded28e8fef44e1898af29022798dfd1/appoinmentData", options);
+            p.then((value1) => {
+                return value1.json();
+            }).then((value2) => {
+                const h1=document.getElementById("div1");
+                const li=document.createElement('li');
+                li.classList.add('li1');
+                h1.appendChild(li);
+                document.querySelector('.li1').innerHTML = `${value2.expenseAmount} - ${value2.description} - ${value2.category}`;
+                console.log(value2);
+            })
+        }else if(third==="Table 2"){
+            let options = {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    expenseAmount:first,
+                    description: sec,
+                    category:third
+                })
+            }
+            let p = fetch("https://crudcrud.com/api/8ded28e8fef44e1898af29022798dfd1/appoinmentData", options);
+            p.then((value1) => {
+                return value1.json();
+            }).then((value2) => {
+                const h1=document.getElementById("div2");
+                const li=document.createElement('li');
+                li.classList.add('li1');
+                h1.appendChild(li);
+                document.querySelector('.li1').innerHTML = `${value2.expenseAmount} - ${value2.description} - ${value2.category}`;
+                console.log(value2);
+            })
+        }else if(third==="Table 3"){
+            let options = {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    expenseAmount:first,
+                    description: sec,
+                    category:third
+                })
+            }
+            let p = fetch("https://crudcrud.com/api/8ded28e8fef44e1898af29022798dfd1/appoinmentData", options);
+            p.then((value1) => {
+                return value1.json();
+            }).then((value2) => {
+                const h1=document.getElementById("div3");
+                const li=document.createElement('li');
+                li.classList.add('li1');
+                h1.appendChild(li);
+                document.querySelector('.li1').innerHTML = `${value2.expenseAmount} - ${value2.description} - ${value2.category}`;
+                console.log(value2);
+            })
+        }
+
+        
+    })
+
+    
+
+
+</script>
+</body>
+</html>
