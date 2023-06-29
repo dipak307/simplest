@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Restaurant</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: red;
+            color: green;
+        }
+
+        form {
+            text-align: center;
+            background-color: pink;
+            height: 550px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Bhojanalaya</h1>
+    <form action="">
+        <label for="">Choose Price :</label>
+        <input type="number" id="input1">
+        <label for="">Choose Dish :</label>
+        <input type="text" id="input2">
+        <label for="">Choose a Table</label>
+        <select name="" id="select">
+            <option value="Table 1" id="1">Table 1</option>
+            <option value="Table 2" id="2">Table 2</option>
+            <option value="Table 3" id="3">Table 3</option>
+        </select>
+        <button id="bill">Add to Bill</button>
+        <div>
+            <h2>Orders</h2>
+        </div>
+        <div>
+            <h3 id="div1">Table 1</h3>
+        </div>
+        <div>
+            <h3 id="div2">Table 2</h3>
+        </div>
+        <div>
+            <h3 id="div3">Table 3</h3>
+        </div>
+    </form>
+    <script>
+        // const id1="";
+        // const id2="";
+        // const id3="";
+        // const val1="";
+        // const val2="";
+        // const val3="";
+        // window.onload = function() {
+// fun();
+// var a=3;
+// function fun(){
+//     console.log(a);
+// }
+
+
+//////8761993731
+
+
+
+        const btn = document.getElementById('bill');
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const first = document.getElementById('input1').value;
+            const sec = document.querySelector('#input2').value;
+            const third = document.getElementById('select').value;
+            if (third === "Table 1") {
+                let options = {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        expenseAmount: first,
+                        description: sec,
+                        category: third
+                    })
+                }
+                const p = await fetch("https://crudcrud.com/api/3263dc112aa8475cb0e2114e91b4392d/practisecrudcrud", options);
+                const value2 = await p.json();
+                const h1 = document.getElementById("div1");
+                const temp = document.createElement('div');
+                temp.classList.add('t');
+                h1.appendChild(temp);
+                const li = document.createElement('li');
+                li.classList.add('li1');
+                const del = document.createElement('button');
+                del.classList.add('del');
+                del.innerHTML = "Delete";
+                temp.insertAdjacentElement("afterbegin", li);
+                temp.insertAdjacentElement("beforeend", del);
+                document.querySelector('.li1').innerHTML = `${value2.expenseAmount} - ${value2.description} - ${value2.category}`;
+                // console.log(value2);
+                localStorage.setItem("setData", `${value2.expenseAmount} - ${value2.description} - ${value2.category}`);
+                const deleted = document.querySelector('.del');
+                deleted.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    localStorage.removeItem("setData");
+                    const item = e.target;
+                    const element = item.parentElement;
+                    if (item.classList.contains("del")) {
+                        element.remove();
+                    }
+                })
+
+            } else if (third === "Table 2") {
+                let options = {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        expenseAmount: first,
+                        description: sec,
+                        category: third
+                    })
+                }
+                const p2 = await fetch("https://crudcrud.com/api/3263dc112aa8475cb0e2114e91b4392d/practisecrudcrud", options);
+                const value2 = await p2.json();
+                const h2 = document.getElementById("div2");
+                const temp1 = document.createElement('div');
+                temp1.classList.add('temp');
+                h2.appendChild(temp1);
+                const li = document.createElement('li');
+                li.classList.add('li2');
+                const del = document.createElement('button');
+                del.classList.add('del2');
+                del.innerHTML = "Delete";
+                temp1.insertAdjacentElement("afterbegin", li);
+                temp1.insertAdjacentElement("beforeend", del);
+                document.querySelector('.li2').innerHTML = `${value2.expenseAmount} - ${value2.description} - ${value2.category}`;
+                // console.log(value2);
+                localStorage.setItem("setData2", `${value2.expenseAmount} - ${value2.description} - ${value2.category}`);
+                const deleted = document.querySelector('.del2');
+                deleted.addEventListener('click', (e) => {
+                    localStorage.removeItem("setData2");
+                    e.preventDefault();
+                    const item = e.target;
+                    const element = item.parentElement;
+                    if (item.classList.contains("del2")) {
+                        element.remove();
+                    }
+                })
+
+            } else if (third === "Table 3") {
+                let options = {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        expenseAmount: first,
+                        description: sec,
+                        category: third
+                    })
+                }
+                const p3 = await fetch("https://crudcrud.com/api/3263dc112aa8475cb0e2114e91b4392d/practisecrudcrud", options);
+                const value2 = await p3.json();
+                const h3 = document.getElementById("div3");
+                const temp3 = document.createElement('div');
+                temp3.classList.add('t');
+                h3.appendChild(temp3);
+                const li = document.createElement('li');
+                li.classList.add('li3');
+                const del = document.createElement('button');
+                del.classList.add('del3');
+                del.innerHTML = "Delete";
+                temp3.insertAdjacentElement("afterbegin", li);
+                temp3.insertAdjacentElement("beforeend", del);
+                document.querySelector('.li3').innerHTML = `${value2.expenseAmount} - ${value2.description} - ${value2.category}`;
+                // console.log(value2);
+                localStorage.setItem("setData3", `${value2.expenseAmount} - ${value2.description} - ${value2.category}`);
+                const deleted = document.querySelector('.del3');
+                deleted.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    localStorage.removeItem("setData3");
+                    const item = e.target;
+                    const element = item.parentElement;
+                    if (item.classList.contains("del3")) {
+                        element.remove();
+                    }
+                })
+            }
+        })
+/////////////////this is remain data after refresh the page until we not click on delete button
+        window.addEventListener('load', (e) => {
+             e.preventDefault();
+             const first = document.getElementById('input1').value;
+             const sec = document.querySelector('#input2').value;
+             const third = document.getElementById('select').value;
+             if (localStorage.getItem("setData") !== null) {
+                // if (third === "Table 1") {
+                    const h1 = document.getElementById("div1");
+                    const temp = document.createElement('div');
+                    temp.classList.add('t');
+                    h1.appendChild(temp);
+                    const li = document.createElement('li');
+                    li.classList.add('li1');
+                    const del = document.createElement('button');
+                    del.classList.add('del');
+                    del.innerHTML = "Delete";
+                    temp.insertAdjacentElement("afterbegin", li);
+                    temp.insertAdjacentElement("beforeend", del);
+                    document.querySelector('.li1').innerHTML = localStorage.getItem("setData");
+                    const deleted = document.querySelector('.del');
+                    deleted.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        localStorage.removeItem("setData");
+                        const item = e.target;
+                        const element = item.parentElement;
+                        if (item.classList.contains("del")) {
+                            element.remove();
+                        }
+                    })
+               // }
+            }
+            
+            const first2 = document.getElementById('input1').value;
+            const sec2 = document.querySelector('#input2').value;
+            const third2 = document.getElementById('select').value;
+            if (localStorage.getItem("setData2") !== null) {
+                console.log("setdata2")
+                // if (third2 === "Table 2") {
+                 console.log("setDat");
+                const h2 = document.getElementById("div2");
+                const temp1 = document.createElement('div');
+                temp1.classList.add('temp');
+                h2.appendChild(temp1);
+                const li2 = document.createElement('li');
+                li2.classList.add('li2');
+                const del = document.createElement('button');
+                del.classList.add('del2');
+                del.innerHTML = "Delete";
+                temp1.insertAdjacentElement("afterbegin", li2);
+                temp1.insertAdjacentElement("beforeend", del);
+                document.querySelector('.li2').innerHTML = localStorage.getItem("setData2");
+                // console.log(value2);
+                const deleted = document.querySelector('.del2');
+                deleted.addEventListener('click', (e) => {
+                    localStorage.removeItem("setData2");
+                    e.preventDefault();
+                    const item2 = e.target;
+                    const element2 = item2.parentElement;
+                    if (item2.classList.contains("del2")) {
+                        element2.remove();
+                    }
+                })
+
+            }
+
+            const first3 = document.getElementById('input1').value;
+            const sec3 = document.querySelector('#input2').value;
+            const third3 = document.getElementById('select').value;
+            if (localStorage.getItem("setData3") !== null) {
+                console.log("setdata3")
+                // if (third2 === "Table 2") {
+                 console.log("setDat");
+                const h2 = document.getElementById("div3");
+                const temp1 = document.createElement('div');
+                temp1.classList.add('temp');
+                h2.appendChild(temp1);
+                const li2 = document.createElement('li');
+                li2.classList.add('li3');
+                const del = document.createElement('button');
+                del.classList.add('del3');
+                del.innerHTML = "Delete";
+                temp1.insertAdjacentElement("afterbegin", li2);
+                temp1.insertAdjacentElement("beforeend", del);
+                document.querySelector('.li3').innerHTML = localStorage.getItem("setData3");
+                // console.log(value2);
+                const deleted = document.querySelector('.del3');
+                deleted.addEventListener('click', (e) => {
+                    localStorage.removeItem("setData3");
+                    e.preventDefault();
+                    const item2 = e.target;
+                    const element2 = item2.parentElement;
+                    if (item2.classList.contains("del3")) {
+                        element2.remove();
+                    }
+                })
+
+            }
+                    
+        })
+
+    </script>
+</body>
+
+</html>
